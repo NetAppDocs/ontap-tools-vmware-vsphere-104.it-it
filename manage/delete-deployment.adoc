@@ -1,0 +1,31 @@
+---
+permalink: manage/delete-deployment.html 
+sidebar: sidebar 
+keywords: ONTAP tools,Storage Replication Adapter 
+summary: Dopo aver eliminato gli ONTAP tools for VMware vSphere , è necessario pulire i FlexVolume creati durante la distribuzione. Se è stato utilizzato un cluster ONTAP dedicato per le distribuzioni, è necessario pulire i FlexVolume perché la distribuzione crea molti FlexVolume inutilizzati, con conseguente riduzione delle prestazioni. 
+---
+= Rimuovere i volumi FlexVol
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando si utilizza un cluster ONTAP dedicato per gli strumenti ONTAP per la distribuzione VMware, vengono creati molti volumi FlexVol inutilizzati.  Dopo aver rimosso gli ONTAP tools for VMware vSphere, è necessario rimuovere i volumi FlexVol per evitare possibili impatti sulle prestazioni.
+
+.Passi
+. Determinare gli ONTAP tools for VMware vSphere dalla prima VM del nodo.
++
+_cat /opt/netapp/meta/ansible_vars.yaml | grep -i protocollo_
+
++
+Se si tratta di una distribuzione iSCSI, è necessario eliminare anche gli igroup.
+
+. Ottieni l'elenco dei volumi FlexVol .
++
+_kubectl describe persistentvolumes | grep internalName | awk -F'=' '{print $2}'_
+
+. Rimuovere le VM dal vCenter Server. Fare riferimento a https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-virtual-machine-administration-guide-8-0/managing-virtual-machinesvsphere-vm-admin/adding-and-removing-virtual-machinesvsphere-vm-admin.html#GUID-376174FE-F936-4BE4-B8C2-48EED42F110B-en["Rimuovere e registrare nuovamente le VM e i modelli di VM"] .
+. Eliminare i volumi FlexVol . Fare riferimento a https://docs.netapp.com/us-en/ontap/volumes/delete-flexvol-task.html["Elimina un FlexVol volume"] .  Nel comando CLI per eliminare un volume, specificare il nome esatto dei volumi FlexVol .
+. Eliminare gli igroup SAN dal sistema di archiviazione ONTAP in caso di distribuzione iSCSI. Fare riferimento a https://docs.netapp.com/us-en/ontap/san-admin/manage-san-initiators-task.html["Visualizza e gestisci gli iniziatori SAN e gli igroup"] .
+

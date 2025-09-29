@@ -1,0 +1,107 @@
+---
+permalink: deploy/ontap-tools-deployment.html 
+sidebar: sidebar 
+keywords:  
+summary: Gli ONTAP tools for VMware vSphere vengono distribuiti come un singolo nodo di piccole dimensioni con servizi core per supportare datastore NFS e VMFS. 
+---
+= Distribuisci gli ONTAP tools for VMware vSphere
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Gli ONTAP tools for VMware vSphere vengono distribuiti come un singolo nodo di piccole dimensioni con servizi core per supportare datastore NFS e VMFS. Il processo di distribuzione degli strumenti ONTAP potrebbe richiedere fino a 45 minuti.
+
+.Prima di iniziare
+Una libreria di contenuti in VMware è un oggetto contenitore che archivia modelli di VM, modelli di vApp e altri tipi di file. La distribuzione con la libreria di contenuti offre un'esperienza fluida perché non dipende dalla connettività di rete.
+
+
+NOTE: È consigliabile archiviare la libreria dei contenuti in un datastore condiviso in modo che tutti gli host all'interno di un cluster possano accedervi.  Creare una libreria di contenuti per archiviare l'OVA prima di configurare l'appliance in modalità HA.  Non eliminare il modello della libreria dei contenuti dopo la distribuzione.
+
+
+NOTE: Per abilitare la distribuzione HA in un secondo momento, non distribuire la macchina virtuale che ospita gli strumenti ONTAP direttamente su un host ESXi.  Distribuiscilo invece su un cluster o su un pool di risorse.
+
+Se non disponi di una libreria di contenuti, segui questi passaggi per crearne una:
+
+*Creare una libreria di contenuti* Se si prevede di utilizzare solo una piccola distribuzione a nodo singolo, non è necessario creare una libreria di contenuti.
+
+. Scarica il file contenente i file binari (_.ova_) e i certificati firmati per gli ONTAP tools for VMware vSphere da  https://mysupport.netapp.com/site/products/all/details/otv10/downloads-tab["Sito di supporto NetApp"^] .
+. Accedi al client vSphere
+. Selezionare il menu vSphere Client e selezionare *Librerie di contenuti*.
+. Seleziona *Crea* sulla destra della pagina.
+. Assegna un nome alla libreria e crea la libreria dei contenuti.
+. Accedi alla libreria dei contenuti che hai creato.
+. Selezionare *Azioni* nella parte destra della pagina, quindi selezionare *Importa elemento* e importare il file OVA.
+
+
+
+NOTE: Per maggiori informazioni, fare riferimento a https://blogs.vmware.com/vsphere/2020/01/creating-and-using-content-library.html["Creazione e utilizzo della libreria di contenuti"] blog.
+
+
+NOTE: Prima di procedere con la distribuzione, impostare il Distributed Resource Scheduler (DRS) del cluster nell'inventario su "Conservativo". In questo modo si garantisce che le VM non vengano migrate durante l'installazione.
+
+Inizialmente, gli ONTAP tools for VMware vSphere vengono distribuiti come configurazione non HA. Per passare alla distribuzione HA, sarà necessario abilitare il plug-in a caldo della CPU e il plug-in a caldo della memoria.  È possibile eseguire questo passaggio come parte del processo di distribuzione oppure modificare le impostazioni della VM dopo la distribuzione.
+
+.Passi
+. Scaricare il file che contiene i file binari (_.ova_) e i certificati firmati per il ONTAP tools for VMware vSphere dal https://mysupport.netapp.com/site/products/all/details/otv10/downloads-tab["Sito di supporto NetApp"^]. Se hai importato l'OVA nella libreria dei contenuti, puoi saltare questo passaggio e procedere con quello successivo
+. Accedi al server vSphere.
+. Passare al pool di risorse, al cluster o all'host in cui si intende distribuire l'OVA.
++
+
+NOTE: Non archiviare mai gli ONTAP tools for VMware vSphere sui datastore vVols da essa gestiti.
+
+. È possibile distribuire l'OVA dalla libreria dei contenuti o dal sistema locale.
++
+|===
+
+
+| Dal sistema locale | Dalla libreria dei contenuti 
+
+
+| a. Fare clic con il pulsante destro del mouse e selezionare *Distribuisci modello OVF...*. b. Scegliere il file OVA dall'URL o andare alla sua posizione, quindi selezionare *Avanti*. | a. Vai alla tua libreria di contenuti e seleziona l'elemento della libreria che desideri distribuire. b. Seleziona *Azioni* > *Nuova VM da questo modello* 
+|===
+. Nel campo *Seleziona un nome e una cartella*, inserisci il nome della macchina virtuale e scegline la posizione.
++
+** Se si utilizza la versione vCenter Server 8.0.3, selezionare l'opzione *Personalizza l'hardware di questa macchina virtuale*, che attiverà un passaggio aggiuntivo denominato *Personalizza hardware* prima di procedere alla finestra *Pronto per il completamento*.
+** Se si utilizza la versione vCenter Server 7.0.3, seguire i passaggi nella sezione *cosa succede dopo?* alla fine della distribuzione.image:../media/select-name.png["Seleziona un nome e una cartella"]
+
+
+. Selezionare una risorsa del computer e fare clic su *Avanti*.  Facoltativamente, seleziona la casella per *Accendere automaticamente la VM distribuita*.
+. Rivedi i dettagli del modello e seleziona *Avanti*.
+. Leggere e accettare il contratto di licenza e selezionare *Avanti*.
+. Selezionare l'archiviazione per la configurazione e il formato del disco, quindi selezionare *Avanti*.
+. Selezionare la rete di destinazione per ciascuna rete di origine e selezionare *Avanti*.
+. Nella finestra *Personalizza modello*, compila i campi richiesti e seleziona *Avanti*.image:../media/customize-temp.png["Personalizza il modello"]
++
+** Le informazioni vengono convalidate durante l'installazione. In caso di discrepanza, sulla console Web viene visualizzato un messaggio di errore e viene richiesto di correggerlo.
+** I nomi host devono includere lettere (AZ, az), cifre (0-9) e trattini (-).  Per configurare il dual stack, specificare il nome host mappato all'indirizzo IPv6.
++
+
+NOTE: Il protocollo IPv6 puro non è supportato.  La modalità mista è supportata con VLAN contenente sia indirizzi IPv6 che IPv4.
+
+** L'indirizzo IP degli strumenti ONTAP è l'interfaccia principale per comunicare con gli strumenti ONTAP .
+** IPv4 è il componente dell'indirizzo IP della configurazione del nodo, che può essere utilizzato per abilitare la shell diagnostica e l'accesso SSH sul nodo a fini di debug e manutenzione.
+
+
+. Quando si utilizza la versione vCenter Server 8.0.3, nella finestra *Personalizza hardware*, abilitare le opzioni *Aggiunta a caldo CPU* e *Collegamento a caldo della memoria* per consentire la funzionalità HA.image:../media/customize-hw.png["Personalizza l'hardware"]
+. Rivedi i dettagli nella finestra *Pronto per il completamento*, seleziona *Fine*.
++
+Man mano che l'attività di distribuzione viene creata, l'avanzamento viene visualizzato nella barra delle applicazioni di vSphere.
+
+. Accendere la macchina virtuale dopo aver completato l'attività se non è stata selezionata l'opzione per accendere automaticamente la macchina virtuale.
+
+
+È possibile monitorare l'avanzamento dell'installazione nella console web della VM.
+
+In caso di discrepanze nel modulo OVF, una finestra di dialogo richiederà un'azione correttiva. Utilizzare il pulsante Tab per navigare, apportare le modifiche necessarie e selezionare *OK*. Hai tre tentativi per risolvere eventuali problemi. Se i problemi persistono dopo tre tentativi, il processo di installazione si interromperà e si consiglia di riprovare l'installazione su una nuova macchina virtuale.
+
+.Cosa succederà adesso?
+Se si dispone ONTAP tools for VMware vSphere con vCenter Server 7.0.3, seguire questi passaggi dopo la distribuzione.
+
+. Accedi al client vCenter
+. Spegnere il nodo degli strumenti ONTAP .
+. Passare agli ONTAP tools for VMware vSphere in *Inventari* e selezionare l'opzione *Modifica impostazioni*.
+. Nelle opzioni *CPU*, seleziona la casella di controllo *Abilita aggiunta a caldo CPU*
+. Nelle opzioni *Memoria*, seleziona la casella di controllo *Abilita* accanto a *Hot plug memoria*.
+

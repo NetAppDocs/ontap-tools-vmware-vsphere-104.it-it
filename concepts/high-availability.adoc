@@ -1,0 +1,33 @@
+---
+permalink: concepts/high-availability.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Gli ONTAP tools for VMware vSphere supportano una configurazione ad alta disponibilità \(HA\) per garantire la funzionalità ininterrotta degli ONTAP tools for VMware vSphere in caso di errore.' 
+---
+= Alta disponibilità per gli ONTAP tools for VMware vSphere
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Gli ONTAP tools for VMware vSphere supportano una configurazione ad alta disponibilità (HA) per garantire la funzionalità ininterrotta degli ONTAP tools for VMware vSphere in caso di errore.
+
+La soluzione ad alta disponibilità (HA) garantisce un rapido ripristino in caso di interruzioni causate da:
+
+* Errore dell'host
++
+
+NOTE: Sono supportati solo i guasti a nodo singolo.
+
+* guasto di rete
+* Errore della macchina virtuale (errore del sistema operativo guest)
+* Arresto anomalo dell'applicazione (strumenti ONTAP )
+
+
+Non è richiesta alcuna configurazione aggiuntiva per gli ONTAP tools for VMware vSphere per garantire elevata disponibilità (HA).
+
+
+NOTE: Gli ONTAP tools for VMware vSphere non supportano vCenter HA.
+
+Per abilitare la funzionalità HA, è necessario abilitare l'aggiunta a caldo della CPU e il collegamento a caldo della memoria durante la distribuzione o in un secondo momento nelle impostazioni degli ONTAP tools for VMware vSphere VM.

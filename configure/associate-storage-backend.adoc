@@ -1,0 +1,22 @@
+---
+permalink: configure/associate-storage-backend.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Associare un backend di archiviazione al vCenter Server per creare una mappatura tra il backend di archiviazione e l"istanza di vCenter Server integrata a livello globale.' 
+---
+= Associare un backend di archiviazione a un'istanza di vCenter Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Associare un backend di archiviazione al vCenter Server per creare una mappatura tra il backend di archiviazione e l'istanza di vCenter Server integrata a livello globale.
+
+.Passi
+. Avviare ONTAP Tools Manager da un browser web: `\https://<ONTAPtoolsIP>:8443/virtualization/ui/`
+. Accedi con le credenziali di amministratore ONTAP tools for VMware vSphere fornite durante la distribuzione.
+. Selezionare vCenter dalla barra laterale.
+. Selezionare le ellissi verticali in corrispondenza dell'istanza di vCenter Server che si desidera associare ai backend di archiviazione.
+. Selezionare il backend di archiviazione dal menu a discesa per associare l'istanza di vCenter Server al backend di archiviazione richiesto.
+

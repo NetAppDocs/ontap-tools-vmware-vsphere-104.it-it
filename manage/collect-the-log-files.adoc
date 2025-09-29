@@ -1,0 +1,42 @@
+---
+permalink: manage/collect-the-log-files.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È possibile raccogliere i file di registro per gli ONTAP tools for VMware vSphere dalle opzioni disponibili nell"interfaccia utente grafica ONTAP tools for VMware vSphere \(GUI\).  L"assistenza tecnica potrebbe chiederti di raccogliere i file di registro per aiutarti a risolvere un problema.' 
+---
+= Raccogliere i file di registro
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile raccogliere i file di registro per gli ONTAP tools for VMware vSphere dalle opzioni disponibili nell'interfaccia utente di ONTAP Tools Manager.  L'assistenza tecnica potrebbe chiederti di raccogliere i file di registro per aiutarti a risolvere un problema.
+
+
+NOTE: La generazione di log da ONTAP Tools Manager include tutti i log per tutte le istanze di vCenter Server.  La generazione di log dall'interfaccia utente del client vCenter è limitata al server vCenter selezionato.
+
+.Passi
+. Avviare ONTAP Tools Manager da un browser web: `\https://<ONTAPtoolsIP>:8443/virtualization/ui/`
+. Accedi con le credenziali di amministratore ONTAP tools for VMware vSphere fornite durante la distribuzione.
+. Selezionare *Bundle di log* dalla barra laterale.
++
+Questa operazione può richiedere diversi minuti.
+
+. Selezionare *Genera* per generare i file di registro.
+. Inserisci l'etichetta per il pacchetto di log e seleziona *Genera*.
++
+Scarica il file tar.gz e invialo al supporto tecnico.
+
+
+
+Per generare un bundle di log utilizzando l'interfaccia utente del client vCenter, seguire i passaggi indicati di seguito:
+
+.Passi
+. Accedi al client vSphere.
+. Dalla home page di vSphere Client, vai a *Supporto* > *Bundle di log* > *Genera*.
+. Specifica l'etichetta del bundle di log e generalo. L'opzione di download verrà visualizzata durante la generazione dei file. Il download potrebbe richiedere del tempo.
+
+
+
+NOTE: Il bundle di log generato sostituisce il bundle di log generato negli ultimi 3 giorni o 72 ore.

@@ -1,0 +1,37 @@
+---
+permalink: protect/map-resource.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È necessario mappare le risorse sul sito protetto e sul sito di ripristino in modo che le macchine virtuali siano configurate per il failover in un gruppo di host o nell"altro.' 
+---
+= Configurare le mappature delle risorse
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario mappare le risorse sul sito protetto e sul sito di ripristino in modo che le macchine virtuali siano configurate per il failover in un gruppo di host o nell'altro.
+
+.Prima di iniziare
+Dovresti aver collegato i siti protetti e di ripristino.
+
+
+NOTE: In VMware Live Site Recovery, le risorse possono essere pool di risorse, host ESXi o cluster vSphere.
+
+.Passi
+. Accedi a vCenter Server e seleziona *Site Recovery* > *Siti*.
+. Seleziona il tuo sito protetto e seleziona *Gestisci*.
+. Selezionare *Mappature risorse* > *Nuovo* nella scheda Gestisci per creare una nuova mappatura delle risorse.
+. Nella procedura guidata Crea mappatura risorse, procedere come segue:
++
+.. Selezionare *Prepara automaticamente i mapping per le risorse con nomi corrispondenti* e selezionare *Avanti*.
+.. Selezionare gli oggetti del data center richiesti per i siti protetti e di ripristino e selezionare *Aggiungi mapping*.
+.. Selezionare *Avanti* dopo aver creato correttamente le mappature.
+.. Selezionare l'oggetto utilizzato in precedenza per creare la mappatura inversa, quindi selezionare *Fine*.
+
+
+
+
+.Risultato
+La pagina Mappature risorse visualizza le risorse del sito protetto e le risorse del sito di ripristino.  Puoi seguire gli stessi passaggi per altre reti nel tuo ambiente.

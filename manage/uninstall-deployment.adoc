@@ -1,0 +1,40 @@
+---
+permalink: manage/uninstall-deployment.html 
+sidebar: sidebar 
+keywords: ONTAP tools,Storage Replication Adapter 
+summary: Seguire le istruzioni in questa sezione per terminare correttamente gli ONTAP tools for VMware vSphere . 
+---
+= Disinstallare gli ONTAP tools for VMware vSphere
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La disinstallazione degli ONTAP tools for VMware vSphere elimina tutti i dati presenti negli strumenti.
+
+.Passi
+. Rimuovere o spostare tutte le macchine virtuali dagli ONTAP tools for VMware vSphere .
++
+** Per rimuovere le macchine virtuali, fare riferimento a https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-virtual-machine-administration-guide-8-0/managing-virtual-machinesvsphere-vm-admin/adding-and-removing-virtual-machinesvsphere-vm-admin.html#GUID-376174FE-F936-4BE4-B8C2-48EED42F110B-en["Rimuovere e registrare nuovamente le VM e i modelli di VM"]
+** Per spostarli in un datastore non gestito, fare riferimento a https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/9-0/migrate-a-virtual-machine-with-storage-vmotion.html["Come migrare la tua macchina virtuale con Storage vMotion"]
+
+
+. link:../manage/delete-ds.html["Elimina i datastore"]creato su ONTAP tools for VMware vSphere.
+. Se hai abilitato il provider VASA, seleziona *Impostazioni* > *Impostazioni provider VASA* > *Annulla registrazione* negli strumenti ONTAP per annullare la registrazione dei provider VASA da tutti i server vCenter.
+. Disassociare tutti i backend di archiviazione dall'istanza di vCenter Server. Fare riferimento a link:../manage/manage-vcenter.html["Dissociare i backend di archiviazione dall'istanza di vCenter Server"] .
+. Elimina tutti i backend di archiviazione. Fare riferimento a link:../manage/storage-backend.html["Gestire i backend di archiviazione"] .
+. Rimuovere l'adattatore SRA da VMware Live Site Recovery:
++
+.. Accedere come amministratore all'interfaccia di gestione dell'appliance VMware Live Site Recovery utilizzando la porta 5480.
+.. Selezionare *Schede di replicazione dell'archiviazione*.
+.. Selezionare la scheda SRA appropriata e dal menu a discesa selezionare *Elimina*.
+.. Conferma di conoscere i risultati dell'eliminazione dell'adattatore e seleziona *Elimina*.
+
+
+. Eliminare le istanze del server vCenter integrate negli ONTAP tools for VMware vSphere. Fare riferimento a link:../manage/manage-vcenter.html["Gestire le istanze di vCenter Server"] .
+. Disattivare gli ONTAP tools for VMware vSphere dal vCenter Server ed eliminare le VM.
+
+
+.Cosa succederà adesso?
+link:../manage/delete-deployment.html["Rimuovere i volumi FlexVol"]

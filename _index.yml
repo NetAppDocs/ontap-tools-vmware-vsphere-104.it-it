@@ -1,0 +1,39 @@
+---
+indexpage:
+  title: Documentazione ONTAP tools for VMware vSphere
+  lead: Gli ONTAP tools for VMware vSphere consentono di configurare, gestire e proteggere
+    i datastore virtuali nell'ambiente vCenter Server.
+  tiles:
+  - title: Iniziare
+    links:
+    - title: Note di rilascio
+      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP3343864
+    - title: Scopri gli ONTAP tools for VMware vSphere
+      url: "/concepts/ontap-tools-overview.html"
+    - title: Distribuisci gli ONTAP tools for VMware vSphere
+      url: "/deploy/ontap-tools-deployment.html"
+    - title: Aggiorna all'ultima versione degli ONTAP tools for VMware vSphere
+      url: "/upgrade/upgrade-ontap-tools.html"
+    - title: Migrazione ONTAP tools for VMware vSphere
+      url: migrate/migrate-to-latest-ontaptools.html
+  - title: Utilizzare gli ONTAP tools for VMware vSphere
+    links:
+    - title: Configurare il controllo degli accessi basato sui ruoli
+      url: "/concepts/rbac-learn-about.html"
+    - title: Configurare la diagnostica remota
+      url: "/manage/configure-remote-diagnostic-access.html"
+    - title: Alta disponibilità per gli ONTAP tools for VMware vSphere
+      url: "/concepts/high-availability.html"
+    - title: Proteggi i tuoi datastore
+      url: "/protect/enable-storage-replication-adapter.html"
+  - title: Ulteriori risorse
+    links:
+    - title: Documentazione per le versioni precedenti degli ONTAP tools for VMware
+        vSphere 9
+      url: https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=63792
+    - title: Base di conoscenza NetApp - ONTAP tools for VMware vSphere
+      url: https://kb.netapp.com/data-mgmt/OTV
+    - title: NetApp Community - ONTAP tools for VMware vSphere
+      url: https://community.netapp.com/t5/VMware-Solutions-Discussions/bd-p/vmware-solutions-discussions
+    - title: Scopri di più su VMware vSphere con ONTAP
+      url: https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-overview.html#why-ontap-for-vsphere

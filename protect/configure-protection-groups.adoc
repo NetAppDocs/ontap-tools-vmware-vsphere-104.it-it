@@ -1,0 +1,72 @@
+---
+permalink: protect/configure-protection-groups.html 
+sidebar: sidebar 
+keywords:  
+summary: È necessario creare gruppi di protezione per proteggere un gruppo di macchine virtuali sul sito protetto. 
+---
+= Configurare siti protetti e di ripristino
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario creare gruppi di protezione per proteggere un gruppo di macchine virtuali sul sito protetto.
+
+Quando si aggiunge un nuovo datastore, è possibile includerlo nel gruppo di datastore esistente oppure aggiungere un nuovo datastore e creare un nuovo volume o gruppo di coerenza per la protezione. Dopo aver aggiunto un nuovo datastore a un gruppo di coerenza o volume protetto, aggiornare SnapMirror ed eseguire il discovery dello storage sia sul sito protetto che su quello di ripristino. È possibile eseguire il discovery manualmente o in base a una pianificazione per garantire che il nuovo datastore venga rilevato e protetto.
+
+
+
+== Siti protetti e di recupero in coppia
+
+È necessario associare i siti protetti e di ripristino creati utilizzando vSphere Client per consentire a Storage Replication Adapter (SRA) di rilevare i sistemi di archiviazione.
+
+
+NOTE: Storage Replication Adapter (SRA) supporta il fan-out con una relazione di sincronizzazione di tipo Automated Failover Duplex e una relazione asincrona SnapMirror sul gruppo di coerenza.  Tuttavia, il fan-out con due SnapMirror asincroni su un gruppo di coerenza o con due SnapMirror fan-out su un volume non è supportato.
+
+.Prima di iniziare
+* Dovresti avere VMware Live Site Recovery installato sui siti protetti e di ripristino.
+* Dovresti avere SRA installato sui siti protetti e di ripristino.
+
+
+.Passi
+. Fare doppio clic su *Site Recovery* nella home page di vSphere Client e selezionare *Siti*.
+. Selezionare *Oggetti* > *Azioni* > *Associa siti*.
+. Nella finestra di dialogo *Associa server Site Recovery Manager*, immettere l'indirizzo del Platform Services Controller del sito protetto, quindi selezionare *Avanti*.
+. Nella sezione Seleziona vCenter Server, procedi come segue:
++
+.. Verificare che il vCenter Server del sito protetto venga visualizzato come candidato corrispondente per l'associazione.
+.. Immettere le credenziali amministrative SSO, quindi selezionare *Fine*.
+
+
+. Se richiesto, selezionare *Sì* per accettare i certificati di sicurezza.
+
+
+.Risultato
+Nella finestra di dialogo Oggetti verranno visualizzati sia i siti protetti che quelli di ripristino.
+
+
+
+== Configurare i gruppi di protezione
+
+.Prima di iniziare
+È necessario assicurarsi che sia il sito di origine che quello di destinazione siano configurati per quanto segue:
+
+* Stessa versione di VMware Live Site Recovery installata
+* Macchine virtuali
+* Siti protetti e di recupero accoppiati
+* I datastore di origine e di destinazione devono essere montati sui rispettivi siti
+
+
+.Passi
+. Accedi a vCenter Server e seleziona *Site Recovery* > *Gruppi di protezione*.
+. Nel riquadro *Gruppi di protezione*, selezionare *Nuovo*.
+. Specificare un nome e una descrizione per il gruppo di protezione, la direzione e selezionare *Avanti*.
+. Nel campo *Tipo*, seleziona l'opzione *Tipo...* come gruppi di datastore (replica basata su array) per datastore NFS e VMFS. Il dominio di errore è costituito esclusivamente da SVM con replica abilitata. Vengono visualizzate le SVM che hanno implementato solo il peering e non presentano problemi.
+. Nella scheda Gruppi di replica, seleziona la coppia di array abilitata o i gruppi di replica che contengono la macchina virtuale configurata, quindi seleziona *Avanti*.
++
+Tutte le macchine virtuali nel gruppo di replica vengono aggiunte al gruppo di protezione.
+
+. È possibile selezionare il piano di ripristino esistente oppure crearne uno nuovo selezionando *Aggiungi al nuovo piano di ripristino.*
+. Nella scheda Pronto per il completamento, rivedi i dettagli del gruppo di protezione creato, quindi seleziona *Fine*.
+

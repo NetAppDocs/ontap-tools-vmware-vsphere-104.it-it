@@ -1,0 +1,36 @@
+---
+permalink: manage/unmount-datastores-on-host.html 
+sidebar: sidebar 
+keywords:  
+summary: 'L"azione Smonta datastore smonta un datastore NFS o VMFS dagli host ESXi.  L"azione di smontaggio del datastore è abilitata per i datastore NFS e VMFS rilevati o gestiti dagli ONTAP tools for VMware vSphere.' 
+---
+= Smonta i datastore NFS e VMFS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'azione Smonta datastore smonta un datastore NFS o VMFS dagli host ESXi.  L'azione di smontaggio del datastore è abilitata per i datastore NFS e VMFS rilevati o gestiti dagli ONTAP tools for VMware vSphere.
+
+.Passi
+. Accedi al client vSphere.
+. Fare clic con il pulsante destro del mouse su un oggetto datastore NFS o VMFS e selezionare *Smonta datastore*.
++
+Si apre una finestra di dialogo in cui sono elencati gli host ESXi su cui è montato il datastore.  Quando l'operazione viene eseguita su un datastore protetto, sullo schermo viene visualizzato un messaggio di avviso.
+
+. Selezionare uno o più host ESXi per smontare il datastore.
++
+Non è possibile smontare il datastore da tutti gli host.  L'interfaccia utente suggerisce di utilizzare invece l'operazione di eliminazione del datastore.
+
+. Selezionare il pulsante *Smonta*.
++
+Se il datastore fa parte di un cluster host protetto, viene visualizzato un messaggio di avviso.
+
+
+
+
+NOTE: Se il datastore protetto viene smontato, l'impostazione di protezione esistente potrebbe comportare una protezione parziale. Fare riferimento a link:../manage/edit-hostcluster-protection.html["Modifica il cluster host protetto"] per consentire una protezione completa.
+
+.Cosa succederà ora?
+È possibile monitorare i progressi nel pannello delle attività recenti.

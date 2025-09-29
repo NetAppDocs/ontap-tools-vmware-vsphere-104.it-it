@@ -1,0 +1,49 @@
+---
+permalink: manage/attach-detach-disk.html 
+sidebar: sidebar 
+keywords:  
+summary: Collegare un disco dati a una macchina virtuale per espandere la capacità di archiviazione. 
+---
+= Collegare o scollegare un disco dati da una macchina virtuale
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== Collegare un disco dati a una macchina virtuale
+
+Collegare un disco dati a una macchina virtuale per espandere la capacità di archiviazione.
+
+.Passi
+. Accedi al client vSphere.
+. Fare clic con il pulsante destro del mouse su una macchina virtuale nell'inventario e selezionare *Modifica impostazioni*.
+. Nella scheda *Hardware virtuale*, seleziona *Disco rigido esistente*.
+. Selezionare la macchina virtuale in cui si trova il disco.
+. Seleziona il disco che vuoi collegare e seleziona *OK*
+
+
+.Risultato
+Il disco rigido viene visualizzato nell'elenco dei dispositivi hardware virtuali.
+
+
+
+== Scollegare un disco dati dalla macchina virtuale
+
+È possibile scollegare un disco dati collegato a una macchina virtuale quando non è più necessario.  Quando si scollega il disco dalla macchina virtuale, questo non viene eliminato automaticamente, ma rimane nel sistema di archiviazione ONTAP .
+
+.Passi
+. Accedi al client vSphere.
+. Fare clic con il pulsante destro del mouse su una macchina virtuale nell'inventario e selezionare *Modifica impostazioni*.
+. Sposta il puntatore sul disco e seleziona *Rimuovi*.
++
+
+NOTE: Il disco viene rimosso dalla macchina virtuale. Se altre macchine virtuali condividono il disco, i file del disco non vengono eliminati.
+
+
+
+.Informazioni correlate
+https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/7-0/vsphere-virtual-machine-administration-guide-7-0/configuring-virtual-machine-hardwarevm-admin/virtual-disk-configurationvm-admin/add-a-hard-disk-to-a-virtual-machinevm-admin/add-a-new-hard-disk-to-a-virtual-machinevm-admin.html["Aggiungere un nuovo disco rigido a una macchina virtuale"]
+
+https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/7-0/vsphere-virtual-machine-administration-guide-7-0/configuring-virtual-machine-hardwarevm-admin/virtual-disk-configurationvm-admin/add-a-hard-disk-to-a-virtual-machinevm-admin/add-an-existing-hard-disk-to-a-virtual-machinevm-admin.html["Aggiungere un disco rigido esistente a una macchina virtuale"]

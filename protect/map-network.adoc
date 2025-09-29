@@ -1,0 +1,42 @@
+---
+permalink: protect/map-network.html 
+sidebar: sidebar 
+keywords:  
+summary: Dovresti mappare le tue reti sul sito protetto e sul sito di ripristino per consentire la comunicazione tra di loro. 
+---
+= Configurare le mappature di rete
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario configurare i mapping delle risorse, come reti VM, host ESXi e cartelle su entrambi i siti, per abilitare il mapping di ciascuna risorsa dal sito protetto alla risorsa appropriata nel sito di ripristino.
+
+Dovresti completare le seguenti configurazioni delle risorse:
+
+* Mappature di rete
+* Mappature delle cartelle
+* Mappature delle risorse
+* Datastore segnaposto
+
+
+.Prima di iniziare
+Dovresti aver collegato i siti protetti e di ripristino.
+
+.Passi
+. Accedi a vCenter Server e seleziona *Site Recovery* > *Siti*.
+. Seleziona il tuo sito protetto e seleziona *Gestisci*.
+. Selezionare *Mappature di rete* > *Nuovo* nella scheda Gestisci per creare una nuova mappatura di rete.
+. Nella procedura guidata Crea mappatura di rete, procedere come segue:
++
+.. Selezionare *Prepara automaticamente i mapping per le reti con nomi corrispondenti* e selezionare *Avanti*.
+.. Selezionare gli oggetti del data center richiesti per i siti protetti e di ripristino e selezionare *Aggiungi mapping*.
+.. Selezionare *Avanti* dopo aver creato correttamente le mappature.
+.. Selezionare l'oggetto utilizzato in precedenza per creare la mappatura inversa, quindi selezionare *Fine*.
+
+
+
+
+.Risultato
+La pagina Mappature di rete visualizza le risorse del sito protetto e le risorse del sito di ripristino.  Puoi seguire gli stessi passaggi per altre reti nel tuo ambiente.

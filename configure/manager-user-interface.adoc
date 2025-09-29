@@ -1,0 +1,48 @@
+---
+permalink: configure/manager-user-interface.html 
+sidebar: sidebar 
+keywords: ontap tools manager, managerui 
+summary: 'ONTAP Tools Manager offre maggiore controllo e potenza agli ONTAP tools for VMware vSphere , agevolando la gestione complessiva dell"appliance, dei tenant e dei backend di storage.' 
+---
+= Interfaccia utente del gestore degli strumenti ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Gli ONTAP tools for VMware vSphere sono un sistema multi-tenant in grado di gestire più istanze di vCenter Server.  ONTAP Tools Manager fornisce un maggiore controllo agli ONTAP tools for VMware vSphere sulle istanze di vCenter Server gestite e sui backend di storage integrati.
+
+ONTAP Tools Manager aiuta a:
+
+* Gestione delle istanze di vCenter Server: aggiungi e gestisci le istanze di vCenter Server negli strumenti ONTAP .
+* Gestione del backend di archiviazione: aggiungi e gestisci i cluster di archiviazione ONTAP negli ONTAP tools for VMware vSphere e mappali alle istanze di vCenter Server integrate a livello globale.
+* Download del bundle di log: raccogli i file di log per gli ONTAP tools for VMware vSphere.
+* Gestione certificati: modifica il certificato autofirmato in un certificato CA personalizzato e rinnova o aggiorna tutti i certificati degli strumenti VASA Provider e ONTAP .
+* Gestione password: reimposta la password dell'applicazione OVA dell'utente.
+
+
+Per accedere a ONTAP Tools Manager, avviare `\https://<ONTAPtoolsIP>:8443/virtualization/ui/` dal browser ed effettuare l'accesso con le credenziali di amministratore ONTAP tools for VMware vSphere fornite durante la distribuzione.
+
+La sezione Panoramica di ONTAP Tools Manager aiuta a gestire la configurazione dell'appliance, ad esempio la gestione dei servizi, l'aumento delle dimensioni dei nodi e l'abilitazione dell'alta disponibilità (HA).  È inoltre possibile monitorare le informazioni generali degli strumenti ONTAP relativi ai nodi, come stato di integrità, dettagli di rete e avvisi.
+
+image:../media/ontap-tools-manager-overview.png["Panoramica del dashboard del gestore degli strumenti ONTAP"]
+
+|===
+| *Carta* | *Descrizione* 
+
+
+| Scheda elettrodomestico | La scheda dell'apparecchio fornisce lo stato generale dell'apparecchio degli strumenti ONTAP .  Mostra i dettagli di configurazione dell'appliance e lo stato dei servizi abilitati.  Per ulteriori informazioni sull'appliance degli strumenti ONTAP , selezionare il collegamento *Visualizza dettagli*.  Quando è in corso un processo di modifica delle impostazioni dell'appliance, il portlet dell'appliance mostra lo stato e i dettagli del processo. 
+
+
+| Scheda avvisi | La scheda Avvisi elenca gli avvisi degli strumenti ONTAP per tipo, inclusi gli avvisi a livello di nodo HA.  È possibile visualizzare l'elenco degli avvisi selezionando il testo del conteggio (collegamento ipertestuale).  Il collegamento indirizza alla pagina di visualizzazione degli avvisi filtrati in base al tipo selezionato. 
+
+
+| vCenter | La scheda vCenter mostra lo stato di integrità dei vCenter nel sistema. 
+
+
+| Backend di archiviazione | La scheda Backend di archiviazione mostra lo stato di integrità dei backend di archiviazione nel sistema. 
+
+
+| Scheda nodi strumenti ONTAP | La scheda dei nodi degli strumenti ONTAP mostra l'elenco dei nodi con il nome del nodo, il nome della VM del nodo, lo stato e tutti i dati relativi alla rete.  È possibile selezionare *Visualizza dettagli* per visualizzare i dettagli aggiuntivi relativi al nodo selezionato.  [NOTA] In una configurazione non HA, viene mostrato solo un nodo.  Nella configurazione HA vengono mostrati tre nodi. 
+|===

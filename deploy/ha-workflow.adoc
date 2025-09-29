@@ -1,0 +1,41 @@
+---
+permalink: deploy/ha-workflow.html 
+sidebar: sidebar 
+keywords: ONTAP tools,Storage Replication Adapter 
+summary: Per iniziare a utilizzare gli ONTAP tools for VMware vSphere sono necessari alcuni passaggi. 
+---
+= Flusso di lavoro di distribuzione ad alta disponibilità (HA)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se si utilizzano datastore vVols , è necessario espandere la distribuzione iniziale degli strumenti ONTAP a una configurazione ad alta disponibilità (HA) e abilitare i servizi VASA Provider.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]Ampliare la distribuzione
+[role="quick-margin-para"]
+È possibile ampliare la configurazione ONTAP tools for VMware vSphere per aumentare il numero di nodi nella distribuzione e modificare la configurazione in un'impostazione HA.
+
+[role="quick-margin-list"]
+* link:../manage/edit-appliance-settings.html["Modifica gli ONTAP tools for VMware vSphere"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"]Abilita i servizi
+[role="quick-margin-para"]
+Per configurare i datastore vVols è necessario abilitare il servizio VASA Provider. Registra il provider VASA con vCenter e assicurati che i tuoi criteri di archiviazione soddisfino i requisiti HA, incluse le configurazioni di rete e di archiviazione appropriate.
+
+[role="quick-margin-para"]
+Abilitare i servizi SRA per utilizzare gli strumenti ONTAP Storage Replication Adapter (SRA) per VMware Site Recovery Manager (SRM) o VMware Live Site Recovery (VLSR).
+
+[role="quick-margin-list"]
+* link:../manage/enable-services.html["Abilita i servizi VASA Provider e SRA"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tre"]Aggiorna i certificati
+[role="quick-margin-para"]
+Se si utilizzano datastore vVol con più istanze di vCenter Server, aggiornare il certificato autofirmato a un certificato firmato da un'autorità di certificazione (CA).
+
+[role="quick-margin-list"]
+* link:../manage/certificate-manage.html["Gestisci i certificati"]
+

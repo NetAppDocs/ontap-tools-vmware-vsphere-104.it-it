@@ -1,0 +1,31 @@
+---
+permalink: release-notes/whats-new.html 
+sidebar: sidebar 
+keywords: 'what"s new, release notes, 10.4, ONTAP tools for VMware vSphere' 
+summary: Scopri le nuove funzionalità disponibili negli ONTAP tools for VMware vSphere 10.4. 
+---
+= Novità negli ONTAP tools for VMware vSphere 10.4
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Scopri le nuove funzionalità disponibili negli ONTAP tools for VMware vSphere 10.4.
+
+[cols="30%,70%"]
+|===
+| Aggiornamento | Descrizione 
+
+
+| link:../configure/create-datastore.html["Supporto per il sistema ASA r2 con 12 nodi per cluster"] | Gli ONTAP tools for VMware vSphere 10.4 supportano flussi di lavoro per sistemi di storage ASA r2 con un massimo di 12 nodi per cluster, migliorando l'efficienza e la scalabilità della gestione dei dati.  Supporta datastore vVols con protocollo iSCSI e FC e datastore VMFS con protocollo iSCSI, FC e NVMe, offrendo opzioni di archiviazione flessibili e avanzate. 
+
+
+| link:../manage/add-ntpserver.html["Miglioramenti dell'interfaccia utente di ONTAP Tools Manager"] | Ora è possibile abilitare il server NTP per una sincronizzazione oraria precisa nell'ambiente e configurare le impostazioni di telemetria per monitorare e analizzare le prestazioni del sistema dall'interfaccia di Gestione strumenti ONTAP .  Queste impostazioni non sono più disponibili nella console di manutenzione. 
+
+
+| Funzionalità di sicurezza avanzate | Le funzionalità di sicurezza offrono ora una protezione avanzata e la conformità agli standard del settore, garantendo un'esperienza solida e intuitiva che aiuta gli amministratori a gestire gli ambienti VMware in modo più efficace. 
+
+
+| link:../protect/enable-storage-replication-adapter.html["Funzionalità avanzate di disaster recovery SRA"] | Gli ONTAP tools for VMware vSphere 10.4 ora supportano le operazioni di disaster recovery utilizzando Site Recovery Appliance (SRA) con snapshot con nomi personalizzati, oltre alle copie di snapshot pianificate SnapMirror . 
+|===

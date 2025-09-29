@@ -1,0 +1,36 @@
+---
+permalink: configure/add-vcenter.html 
+sidebar: sidebar 
+keywords:  
+summary: Aggiungi istanze di vCenter Server agli ONTAP tools for VMware vSphere per configurare, gestire e proteggere i tuoi datastore virtuali nel tuo ambiente vCenter Server. 
+---
+= Aggiungi istanze di vCenter Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Aggiungi istanze di vCenter Server agli ONTAP tools for VMware vSphere per configurare, gestire e proteggere i tuoi datastore virtuali nel tuo ambiente vCenter Server.  Quando si aggiungono più istanze di vCenter Server, sono necessari certificati CA personalizzati per la comunicazione sicura tra gli strumenti ONTAP e ciascun vCenter Server.
+
+*Informazioni su questo compito*
+
+Grazie all'integrazione con vCenter, gli strumenti ONTAP consentono di eseguire attività di storage come provisioning, snapshot e protezione dei dati direttamente dal client vSphere, eliminando la necessità di passare a console di gestione dello storage separate.
+
+.Passi
+. Apri un browser web e vai all'URL: `\https://<ONTAPtoolsIP>:8443/virtualization/ui/`
+. Accedi con le credenziali di amministratore ONTAP tools for VMware vSphere fornite durante la distribuzione.
+. Selezionare *vCenter* > *Aggiungi* per integrare le istanze di vCenter Server.  Fornisci l'indirizzo IP o il nome host del tuo vCenter, il nome utente, la password e i dettagli della porta.
++
+
+NOTE: Non è necessario un account amministratore per aggiungere istanze vCenter agli strumenti ONTAP .  È possibile creare un ruolo personalizzato senza l'account amministratore con autorizzazioni limitate. Fare riferimento alink:../concepts/rbac-vcenter-use.html["Utilizzare vCenter Server RBAC con gli ONTAP tools for VMware vSphere 10"] per i dettagli.
+
+
+
+L'aggiunta di un'istanza di vCenter Server agli strumenti ONTAP attiva automaticamente le seguenti azioni:
+
+* Il plug-in del client vCenter è registrato come plug-in remoto.
+* I privilegi personalizzati per i plug-in e le API vengono applicati all'istanza di vCenter Server.
+* Per gestire gli utenti vengono creati ruoli personalizzati.
+* Il plug-in viene visualizzato come collegamento nell'interfaccia utente di vSphere.
+

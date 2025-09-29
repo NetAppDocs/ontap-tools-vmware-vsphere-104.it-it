@@ -1,0 +1,31 @@
+---
+permalink: protect/configure-placeholder-datastores.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È necessario configurare un datastore segnaposto per occupare una posizione nell"inventario vCenter nel sito di ripristino per la macchina virtuale protetta. Il datastore segnaposto non deve essere di grandi dimensioni, poiché le VM segnaposto sono piccole e utilizzano solo poche centinaia di kilobyte o meno.' 
+---
+= Configurare i datastore segnaposto
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario configurare un datastore segnaposto per occupare una posizione nell'inventario vCenter nel sito di ripristino per la macchina virtuale (VM) protetta. Il datastore segnaposto non deve essere di grandi dimensioni, poiché le VM segnaposto sono piccole e utilizzano solo poche centinaia di kilobyte o meno.
+
+.Prima di iniziare
+* Dovresti aver collegato i siti protetti e di ripristino.
+* Dovresti aver configurato le mappature delle risorse.
+
+
+.Passi
+. Accedi a vCenter Server e seleziona *Site Recovery* > *Siti*.
+. Seleziona il tuo sito protetto e seleziona *Gestisci*.
+. Selezionare *Datastore segnaposto* > *Nuovo* nella scheda Gestisci per creare un nuovo datastore segnaposto.
+. Selezionare il datastore appropriato e fare clic su *OK*.
++
+
+NOTE: Gli archivi dati segnaposto possono essere locali o remoti e non devono essere replicati.
+
+. Ripetere i passaggi da 3 a 5 per configurare un datastore segnaposto per il sito di ripristino.
+

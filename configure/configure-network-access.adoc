@@ -1,0 +1,24 @@
+---
+permalink: configure/configure-network-access.html 
+sidebar: sidebar 
+keywords: network access configuration, export policy, mount operation, ESXi hosts 
+summary: 'Se non hai configurato l"accesso alla rete, tutti gli indirizzi IP rilevati dall"host ESXi vengono aggiunti per impostazione predefinita al criterio di esportazione.' 
+---
+= Configurare l'accesso alla rete
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se non hai configurato l'accesso alla rete, tutti gli indirizzi IP rilevati dall'host ESXi vengono aggiunti per impostazione predefinita al criterio di esportazione.  È possibile configurarlo in modo da aggiungere alcuni indirizzi IP specifici alla policy di esportazione ed escludere il resto.  Tuttavia, quando si esegue un'operazione di montaggio sugli host ESXi esclusi, l'operazione fallisce.
+
+.Passi
+. Accedi al client vSphere.
+. Selezionare *Strumenti NetApp ONTAP * nella pagina dei collegamenti nella sezione plug-in.
+. Nel riquadro sinistro degli strumenti ONTAP , vai su *Impostazioni* > *Gestisci accesso alla rete* > *Modifica*.
++
+Per aggiungere più indirizzi IP, separare l'elenco con virgole, intervallo, Classless Inter-Domain Routing (CIDR) o una combinazione di tutti e tre.
+
+. Seleziona *Salva*.
+
