@@ -48,7 +48,7 @@ NOTE: Dopo aver abilitato la configurazione HA, non è possibile tornare a una c
 . Nella sezione *Impostazioni HA* della finestra *Modifica impostazioni appliance*, è ​​possibile immettere i dettagli dei nodi 2 e 3.  Gli ONTAP tools for VMware vSphere supportano tre nodi nella configurazione HA.
 +
 
-NOTE: La maggior parte delle opzioni di input sono precompilate con i dettagli della rete Nodo 1 per semplificare il flusso di lavoro. Tuttavia, è possibile modificare i dati di input prima di passare alla pagina finale della procedura guidata. È possibile immettere i dettagli dell'indirizzo IPv6 per gli altri due nodi solo quando l'indirizzo IPv6 è abilitato sul primo nodo.
+NOTE: La maggior parte delle opzioni di input sono precompilate con i dettagli della rete Nodo 1 per semplificare il flusso di lavoro. Tuttavia, è possibile modificare i dati di input prima di passare alla pagina finale della procedura guidata. È possibile immettere i dettagli dell'indirizzo IPv6 per gli altri due nodi solo quando l'indirizzo IPv6 è abilitato sul nodo di gestione degli strumenti ONTAP .
 
 +
 Assicurarsi che un host ESXi contenga una sola VM degli strumenti ONTAP .  Gli input vengono convalidati ogni volta che si passa alla finestra successiva.

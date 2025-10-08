@@ -20,7 +20,7 @@ NOTA:
 
 
 .Prima di iniziare
-Per un aggiornamento non HA, spegnere la VM degli strumenti ONTAP e, per un aggiornamento HA, spegnere il primo nodo prima di apportare le seguenti modifiche alle impostazioni della macchina virtuale (VM).
+Per un aggiornamento non HA, spegnere la VM degli strumenti ONTAP e, per un aggiornamento HA, spegnere il nodo di gestione degli strumenti ONTAP prima di apportare le seguenti modifiche alle impostazioni della macchina virtuale (VM).
 
 Se si esegue l'aggiornamento dagli ONTAP tools for VMware vSphere 10.2 o 10.3, è necessario completare i seguenti passaggi prima di procedere con l'attività di aggiornamento: * Aggiungere un disco rigido aggiuntivo da 100 GB a ciascun nodo, poiché i dati di servizio sono archiviati localmente sulla VM. * Modificare la CPU e la memoria per la VM spenta in base al tipo di distribuzione. Abilitare il plug-in a caldo per CPU e RAM.
 
@@ -123,7 +123,7 @@ Dopo aver eseguito l'aggiornamento agli ONTAP tools for VMware vSphere 10.4, è 
 * Disabilitare i servizi dall'interfaccia utente del gestore
 * Passare da una configurazione non HA a una configurazione HA
 * Passare da una configurazione non-HA piccola a una configurazione non-HA media o a una configurazione HA media o grande.
-* In caso di aggiornamento non HA, riavviare la VM degli strumenti ONTAP per riflettere le modifiche.  In caso di aggiornamento HA, riavviare il primo nodo per riflettere le modifiche sul nodo.
+* In caso di aggiornamento non HA, riavviare la VM degli strumenti ONTAP per riflettere le modifiche. In caso di aggiornamento HA, riavviare il nodo di gestione degli strumenti ONTAP per riflettere le modifiche sul nodo.
 
 
 .Cosa c'è dopo?

@@ -60,13 +60,13 @@ Utilizzare il seguente foglio di lavoro per raccogliere le informazioni necessar
 | Requisito | Il tuo valore 
 
 
-| Indirizzo IP per l'applicazione degli strumenti ONTAP . Questo è l'indirizzo IP per accedere all'interfaccia web degli strumenti ONTAP |  
+| Indirizzo IP per l'applicazione degli strumenti ONTAP . Questo è l'indirizzo IP per accedere all'interfaccia web degli strumenti ONTAP (bilanciatore del carico) |  
 
 
-| Gli strumenti ONTAP forniscono un indirizzo IP virtuale per la comunicazione interna. Questo indirizzo IP viene utilizzato per la comunicazione interna in una configurazione con più istanze di strumenti ONTAP . Questo indirizzo IP non deve essere uguale all'indirizzo IP dell'applicazione degli strumenti ONTAP . |  
+| Gli strumenti ONTAP forniscono un indirizzo IP virtuale per la comunicazione interna. Questo indirizzo IP viene utilizzato per la comunicazione interna in una configurazione con più istanze di strumenti ONTAP . Questo indirizzo IP non deve essere uguale all'indirizzo IP dell'applicazione degli strumenti ONTAP (piano di controllo Kubernetes). |  
 
 
-| Nome host DNS per il primo nodo |  
+| Nome host DNS per il nodo di gestione degli strumenti ONTAP |  
 
 
 | Server DNS primario |  
@@ -78,7 +78,7 @@ Utilizzare il seguente foglio di lavoro per raccogliere le informazioni necessar
 | Dominio di ricerca DNS |  
 
 
-| Indirizzo IPv4 per il primo nodo. Si tratta di un indirizzo IPv4 univoco per l'interfaccia di gestione del nodo sulla rete di gestione. |  
+| Indirizzo IPv4 per il nodo di gestione degli strumenti ONTAP . Si tratta di un indirizzo IPv4 univoco per l'interfaccia di gestione del nodo sulla rete di gestione. |  
 
 
 | Maschera di sottorete per l'indirizzo IPv4 |  
