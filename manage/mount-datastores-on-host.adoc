@@ -13,6 +13,9 @@ summary: 'Il montaggio di un datastore fornisce accesso allo storage per host ag
 [role="lead"]
 Il montaggio di un datastore fornisce accesso allo storage per host aggiuntivi.  È possibile montare il datastore sugli host aggiuntivi dopo averli aggiunti all'ambiente VMware.
 
+
+NOTE: Quando si aggiunge un nuovo host ESXi utilizzando https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/9-0/use-quickstart-to-add---host-to-a-cluster.html["Aggiungi un host ESX al flusso di lavoro del cluster vSphere"] , attendere il completamento della rilevazione host pianificata prima che venga visualizzata negli strumenti ONTAP .  In alternativa, è possibile eseguire manualmente l'individuazione dalla schermata di panoramica degli strumenti NetApp ONTAP .
+
 .Informazioni su questo compito
 * Alcune azioni del tasto destro del mouse sono disabilitate o non disponibili a seconda della versione del client vSphere e del tipo di datastore selezionato.
 +
@@ -32,3 +35,6 @@ Il montaggio di un datastore fornisce accesso allo storage per host aggiuntivi. 
 
 .Cosa succederà ora?
 È possibile monitorare l'avanzamento nel pannello delle attività recenti.
+
+.Argomento correlato
+link:../manage/add-vsphere-host.html["Aggiungi nuovi host VMware vSphere"]
