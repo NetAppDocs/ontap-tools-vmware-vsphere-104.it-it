@@ -103,7 +103,13 @@ Verrà creato un nuovo HDD.  Il provisioner di archiviazione dinamica utilizza q
 
 .Passi
 . Carica gli ONTAP tools for VMware vSphere nella libreria dei contenuti.
-. Nella pagina della VM primaria, seleziona *Azioni* > *Modifica impostazioni*
+. Nella pagina della VM primaria, seleziona *Azioni* > *Modifica impostazioni*. Per identificare il nome della VM primaria:
++
+.. Abilita la shell diag su qualsiasi nodo
+.. Eseguire il seguente comando:
+`grep sourceHost /opt/netapp/meta/ansible_vars.yaml`
+
+
 . Selezionare il file ISO della libreria di contenuti nella finestra di modifica delle impostazioni nel campo *Unità CD/DVD*.
 . Selezionare il file ISO e fare clic su *OK*.  Selezionare la casella di controllo Connesso nel campo *Unità CD/DVD*.image:../media/primaryvm-edit-settings.png["Modifica impostazioni"]
 . Dal vCenter Server, aprire una console per gli strumenti ONTAP .
